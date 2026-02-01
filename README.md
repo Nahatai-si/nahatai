@@ -1,3 +1,15 @@
+olist-churn-analysis/
+│
+├── README.md
+├── sql/
+│   ├── 01_churn_label_fixed.sql
+│   ├── 02_frm_query.sql
+│   └── 03_after_churn_check.sql
+    └── 04.feature_rfm_final.sql
+│
+└── notebooks/
+    └── churn_model_olist.ipynb
+
 📌 Project Title
 
 Churn Analysis & Retention Insights for E-commerce Marketplace (Olist)
@@ -22,16 +34,14 @@ What alternative strategies may provide more business value
 
 📌 Dataset
 
-Olist Brazilian E-commerce Dataset
-
-Source: Kaggle
+Olist Brazilian E-commerce Dataset, Source: Kaggle
 
 Tables used: orders, customers, order_items, payments, delivery dates, reviews
 
 (Dataset not included in this repository due to size.)
 
-📌 Methodology
-1️⃣ Churn Definition (SQL)
+Methodology
+1️.Churn Definition (SQL)
 
 Churn is defined as no purchase within 90 days after a given as-of date
 
@@ -39,7 +49,7 @@ Monthly as-of snapshots are used to simulate real-world prediction
 
 All labels are created using future data relative to each snapshot to avoid data leakage
 
-2️⃣ SQL Data Pipeline
+2️. SQL Data Pipeline
 
 All data preparation is done in SQL (SQLite):
 
@@ -59,7 +69,7 @@ Customer reviews (average score, low-review ratio)
 
 This produces a final Analytical Base Table (ABT) used for modeling.
 
-3️⃣ Exploratory Validation
+3️. Exploratory Validation
 
 Key observations:
 
@@ -71,7 +81,7 @@ Recency shows a monotonic relationship with churn
 
 The high churn rate is validated as a business reality, not a data or modeling error.
 
-4️⃣ Modeling (Python)
+4️. Modeling (Python)
 
 Logistic Regression with class imbalance handling
 
@@ -100,7 +110,4 @@ This aligns better with marketplace economics and offers clearer actionable valu
 📌 Tech Stack
 
 SQL (SQLite)
-
-Python (pandas, scikit-learn)
-
-Google Colab
+Python (pandas, scikit-learn), Google Colab
