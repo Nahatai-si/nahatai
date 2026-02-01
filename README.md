@@ -91,6 +91,18 @@ ROC-AUC ≈ 0.59
 
 Lift@Top10% ≈ 1.00
 
+Modeling Process
+
+1.Load ABT
+
+2.Train logistic regression
+
+3.Evaluate AUC + Lift@Top10%
+
+4.Feature importance
+
+Built an end-to-end churn analysis pipeline for an e-commerce marketplace using SQL and Python. Designed leakage-safe churn labels with as-of date snapshots, engineered behavioral features (RFM, delivery, payments, reviews), and trained a logistic regression model focused on ranking performance. Due to the dominance of one-time buyers, the model showed limited lift, leading to the key insight that traditional churn modeling is not suitable for this business. Recommended reframing the problem toward second-purchase prediction and early lifecycle retention strategies.
+
 📌 Key Insights
 
 Traditional churn modeling provides limited lift in a marketplace dominated by one-time buyers
